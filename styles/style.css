@@ -1,0 +1,4 @@
+body{ height: 100vh; }
+/*|| About valley project */
+.about-valley-project .row::after{ content: ''; height: 4rem; width: 100%; background-color: #24346E; }
+.valley-project__img{ position: absolute; width: 22rem; right: -3.375rem; top: -6.25rem; }
