@@ -816,3 +816,13 @@ footer{padding-block: 4.5rem 7.5rem;font-family: var(--ff-n)}
 .carousel-control-prev{left: 44%}}
 
 /* ======================== Gallery Page ======================== */
+.services-gallery__container {
+  grid-auto-rows: 20rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-auto-flow: dense;
+}
+.service-gallery__image{ background-color: #d4d4d4; border-radius: 1.5rem; }
+.img--1{ grid-row: span 2; }
+.img--1, .img--2, .img--5, .img--7{ grid-column: span 2; }
+.img--3, .img--4 {grid-column: span 1;}
+.img--6{ grid-column: span 3; }
