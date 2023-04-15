@@ -769,7 +769,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ======================== Wedding Page ======================== */
 /*! Header ================ */
-header{position: absolute;width: 100vw;inset: 0;max-height: max-content}
+header{position: absolute;width: 100vw;inset: 0;max-height: max-content; z-index: 2;}
 .navbar-nav .nav-item:not(:last-child){margin: 0}
 .container-liquid{padding-inline: 7.5vw}
 .navbar-brand{max-width: 16rem}
@@ -808,21 +808,33 @@ footer{padding-block: 4.5rem 7.5rem;font-family: var(--ff-n)}
 /*! Other Services ================ */
 /*! Schedule ================ */
 .schedule .form-control{min-width: 12rem;width: 100%;}
-@media (min-width:75rem){.brand-insights .d-flex:not(:last-of-type){box-shadow: 1px 0 0 #ddd}
-.carousel-control-next{right: 44%}
-.carousel-control-prev{left: 44%}}
-@media (min-width:48rem){.brand-insights .d-flex:nth-of-type(odd){box-shadow: 1px 0 0 #ddd}}
-@media (min-width:36rem){.carousel-control-next{right: 44%}
-.carousel-control-prev{left: 44%}}
+
 
 /* ======================== Gallery Page ======================== */
-.services-gallery__container {
-  grid-auto-rows: 20rem;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-auto-flow: dense;
-}
-.service-gallery__image{ background-color: #d4d4d4; border-radius: 1.5rem; }
-.img--1{ grid-row: span 2; }
-.img--1, .img--2, .img--5, .img--7{ grid-column: span 2; }
-.img--3, .img--4 {grid-column: span 1;}
-.img--6{ grid-column: span 3; }
+.gallery .banner{ background: url('../images/gallery/banner.png') no-repeat center/auto; min-height: 82vh; }
+.gallery .banner::before{ content: ''; position: absolute; width: 100%; height: 100%; background-color: #000000; opacity: .54; }
+.gallery .banner__title{text-transform: uppercase; font-size: max(2.5rem, 2.86vw);}
+.gallery .banner__title span{font-size: max(4.5rem, 6.82vw);}
+.services-gallery__container{ max-width: 100%; grid-auto-rows: minmax(14rem, 22.5rem); grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); grid-auto-flow: dense; }
+.h-lg-stretch{ grid-column: span 3; }
+.h-stretch{ grid-column: span 2; }
+.b-stretch{ grid-area: span 2 / span 2; }
+.service-gallery__image img{ width: 100%; height: 100%; border-radius: 1rem; object-fit: cover; object-position: top center; }
+.service-gallery__link{ width: max-content; height: max-content; border-radius: .25rem; inset: auto 1.25rem 1.25rem auto; font-family: var(--ff-m); font-size: .875rem; line-height: 1; }
+.service-gallery__link span{font-size: .625rem;}
+
+
+
+/* ======================== Gallery Page ======================== */
+@media (min-width:75rem){
+  .brand-insights .d-flex:not(:last-of-type){box-shadow: 1px 0 0 #ddd} .carousel-control-next{right: 44%} .carousel-control-prev{left: 44%}}
+@media (min-width:48rem){
+  .brand-insights .d-flex:nth-of-type(odd){box-shadow: 1px 0 0 #ddd}}
+@media (min-width:36rem){
+  .carousel-control-next{right: 44%} .carousel-control-prev{left: 44%}}
+@media (max-width: 1140px) {
+  .services-gallery__container { grid-auto-flow: row; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr))}
+  .h-stretch{grid-column: span 3;}}
+@media (max-width: 768px) {
+  .services-gallery__container { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
+  .h-lg-stretch, .h-stretch, .b-stretch{ grid-area: span 1 / span 1; }}
