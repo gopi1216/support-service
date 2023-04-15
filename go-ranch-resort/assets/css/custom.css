@@ -832,8 +832,12 @@ footer{padding-block: 4.5rem 7.5rem;font-family: var(--ff-n)}
   .brand-insights .d-flex:nth-of-type(odd){box-shadow: 1px 0 0 #ddd}}
 @media (min-width:36rem){
   .carousel-control-next{right: 44%} .carousel-control-prev{left: 44%}}
-@media (max-width: 1140px) {
-  .services-gallery__container { grid-auto-flow: row; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr))}
+@media (max-width: 1440px) {
+  .services-gallery__container { grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr)) }
+  .service-gallery__image img{object-position: center;}
+  .h-stretch{grid-column: span 3;}}
+@media (max-width: 1366px) {
+  .services-gallery__container { grid-auto-flow: row;}
   .h-stretch{grid-column: span 3;}}
 @media (max-width: 768px) {
   .services-gallery__container { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
