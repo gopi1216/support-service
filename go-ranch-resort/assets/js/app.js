@@ -7,7 +7,7 @@ new ResizeObserver(() => scroll.update()).observe(
 );
 
 scroll.on('scroll', (position, limit, speed, direction) => {
-    func_headerOpaque(position)       
+    func_headerOpaque(position)
 });
 
 
@@ -27,20 +27,20 @@ function func_headerOpaque(position) {
    var mh =  $('.main-header').outerHeight();
    var mh_h = mh - h;
     if ((position.scroll.y) > h) {
-        $(".main-header").addClass("top"); 
+        $(".main-header").addClass("top");
         $(".main-header").css( 'margin-top', -h + 'px' );
         navHeightEdjest(mh_h);
       } else {
-        $(".main-header").css( 'margin-top', 0 + 'px' ); 
-        $(".main-header").removeClass("top"); 
+        $(".main-header").css( 'margin-top', 0 + 'px' );
+        $(".main-header").removeClass("top");
         navHeightEdjest(mh);
-    } 
+    }
 }
 
 function navHeightEdjest(mh) {
     if ($(window).width() < 991) {
         $('.navbar-collapse').css('top', mh + 'px')
-    } 
+    }
 }
 
 $(document).ready(function () {
@@ -168,3 +168,29 @@ function gridAdjust(targertSteing) {
     //   mobileOnlySlider(".info-card-container", 2, false, false, 767);
     // }
 }
+
+$(function () {
+    $('.accommodation-slider').slick({
+      dots: true,
+      infinite: false,
+      speed: 400,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
+        },
+      ],
+    });
+  })
