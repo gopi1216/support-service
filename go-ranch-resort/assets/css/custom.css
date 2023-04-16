@@ -828,7 +828,7 @@ footer{padding-block: 4.5rem 7.5rem;font-family: var(--ff-n)}
 .accommodation .container-fluid::before{content: ''; position: absolute; width: 100%; height: 90%; background-color: #223C8A; inset: 8rem 0 0;}
 .accommodation-slider{ max-width: 86.5vw; font-family: var(--ff-m); }
 .accommodation-slider__item > .row{box-shadow: 0 9px 1.25rem rgba(13, 38, 76, 0.19), 0 -.5rem 1.25rem rgba(64, 64, 64, .20);}
-.accommodation-slider__item img{min-height: 24.75rem; object-fit: fill;}
+.accommodation-slider__item img{min-height: 24.75rem; object-fit: fill; aspect-ratio: 3/2.5;}
 .accommodation-slider__price{font-size: max(1.25rem, 1.35vw);}
 .cottage :is(.slick-prev, .slick-next){width: 3.5rem;height: 3.5rem;}
 .cottage :is(.slick-prev, .slick-next)::before{font-size: 3.5rem; font-family: monospace; font-weight: 500;}
@@ -844,21 +844,23 @@ footer{padding-block: 4.5rem 7.5rem;font-family: var(--ff-n)}
 /* ======================== Media Queries ======================== */
 @media (min-width:75rem){
   .brand-insights .d-flex:not(:last-of-type){box-shadow: 1px 0 0 #ddd}}
-@media (min-width:48rem){
-  .brand-insights .d-flex:nth-of-type(odd){box-shadow: 1px 0 0 #ddd}}
+  @media (max-width: 85.375rem) {
+    .accommodation-slider__item img{min-height: 256px;}
+  }
 @media (min-width:36rem){
   .carousel-control-next{right: 44%}
   .carousel-control-prev{left: 44%}}
-@media (max-width: 1440px) {
+@media (max-width: 90rem) {
   .services-gallery__container { grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr)) }
   .service-gallery__image img{object-position: center;}
   .h-stretch{grid-column: span 3;}
   .b-stretch{grid-area: span 2 / span 3;}}
-@media (max-width: 1366px) {
+@media (max-width: 85.375rem) {
   .services-gallery__container { grid-auto-flow: row;}
   .h-stretch{grid-column: span 3;}}
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
   .services-gallery__container { grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr)); }
+  .brand-insights .d-flex:nth-of-type(odd){box-shadow: 1px 0 0 #ddd}
   .h-lg-stretch, .h-stretch, .b-stretch{ grid-area: span 1 / span 1; }
   .cottage .slick-prev{left: -4.91vw;}
   .cottage .slick-next{right: -4.91vw;}}
